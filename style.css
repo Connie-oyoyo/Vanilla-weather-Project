@@ -2,6 +2,8 @@ h1 {
     text-align: center;
     color: cornflowerblue;
     margin-top: 20px;
+    margin-bottom: 0;
+
 }
 
 h2 {
@@ -21,6 +23,9 @@ li {
     font-size: 14px;
     font-weight: 20px;
     line-height: 19px;
+}
+
+li:first-letter {
     text-transform: capitalize;
 }
 
