@@ -21,7 +21,8 @@ Weather App
             <div class="row">
               <div class="col-9">
           <input type="search" placeholder="Enter city" 
-          class="form-control" id="city-input" /> 
+          class="form-control" id="city-input" 
+          autocomplete="off" /> 
           </div>
           <div class="col-3">
           <input type="submit" value="Search" class="btn btn-primary w-100" />
@@ -40,7 +41,8 @@ Weather App
                 <img src="https://cdn-icons-png.flaticon.com/128/10034/10034791.png" alt="cloudy" 
                 id="icon" />
                 <div>
-                <strong id="temperature"></strong><span class="units">ºC | <a href="#">ºF</a></span>
+                <strong id="temperature"></strong><span class="units"> <a href="#" id="celsius-link">ºC</a> |
+                <a href="#" id="fahrenheit-link">ºF</a></span>
             </div>
             </div>
             </div>
