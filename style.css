@@ -52,4 +52,13 @@ li:first-letter {
 .weather-temperature .units {
     position: relative;
     top: -32px;
+    text-decoration: none;
+}
+.weather-temperature .active {
+    color: black;
+    cursor: default;
+}
+
+.weather-temperature .active:hover {
+    text-decoration: none;
 }
