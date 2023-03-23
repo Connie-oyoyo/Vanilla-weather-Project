@@ -52,7 +52,7 @@ li:first-letter {
 .weather-temperature .units {
     position: relative;
     top: -32px;
-    text-decoration: none;
+
 }
 .weather-temperature .active {
     color: black;
@@ -60,5 +60,9 @@ li:first-letter {
 }
 
 .weather-temperature .active:hover {
+    text-decoration: none;
+}
+
+.units a{
     text-decoration: none;
 }
