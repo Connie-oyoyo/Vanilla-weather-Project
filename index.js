@@ -60,8 +60,7 @@ function displayCelsiusTemperature(event) {
     let temperatureElement = document.querySelector("#temperature");
     celsiusLink.classList.add("active");
     fahrenheitLink.classList.remove("active");
-    let celsiusTemperature = document.querySelector("#temperature");
-    temperatureElement.innerHTML = (celsiusTemperature);
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
@@ -77,3 +76,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("Lagos");
+
+
