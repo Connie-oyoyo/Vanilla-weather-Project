@@ -78,3 +78,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 search("Lagos");
 
 
+let date = new Date("1974/4/4");
+console.log(date);
+
+
