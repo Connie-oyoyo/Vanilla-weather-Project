@@ -13,6 +13,46 @@ function formatDate(timestamp) {
     return  `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+    
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+    days.forEach(function (day) {
+        forecastHTML = 
+        forecastHTML +
+    `<div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+           <img 
+            src="https://openweathermap.org/img/wn/04d@2x.png" alt="" 
+             width="30"
+          />
+         <div class="weather-forecast-temperature"> 
+        <span class="weather-forecast-temperature-max">
+         18º
+       </span>
+      <span class="weather-forecast-temperature-min">
+         12º
+     </span>
+    </div>
+    </div>
+ `;            
+});
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates)  {
+    console.log(coordinates);
+    let apiKey = "ad35702ba0f5fcbdc3844584b48f901d";
+let apiUrl =
+`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid={apiKey}&units=metric`;
+console.log(apiUrl);
+
+    
+}
+
 function displayTemperature(response) {
     console.log(response.data);
 let temperatureElement = document.querySelector("#temperature");
@@ -32,6 +72,9 @@ humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+getForecast(response.data.coord);
+
 }
 
 function search(city) {
@@ -75,10 +118,11 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
-search("Lagos");
+search("Madrid");
 
 
-let date = new Date("1974/4/4");
-console.log(date);
+displayForecast();
+
+
 
 
